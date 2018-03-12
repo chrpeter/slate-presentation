@@ -1,0 +1,5 @@
+const BLOCK_TAGS = {
+  section: 'section',
+  blockquote: 'quote',
+  h1: 'heading-one',
+};
