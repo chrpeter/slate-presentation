@@ -162,20 +162,20 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="secondary" notes="">
           <Heading size={6} textColor="primary" lineHeight="2">
-            Our use case & motivation
+            Our use case & motivation - Slate:
           </Heading>
           <List textColor="tertiary">
             <AppearListItem textSize="2.2rem">
-              Complex structures.
+              Handles complex structures.
             </AppearListItem>
             <AppearListItem textSize="2.2rem">
               A lot of custom plugins.
             </AppearListItem>
             <AppearListItem textSize="2.2rem">
-               Special use cases for our customer.
+              Solves special use cases for our customer (and more!)
             </AppearListItem>
             <AppearListItem textSize="2.2rem">
-              We needed to support tables.
+              We needed to support tables...
             </AppearListItem>
           </List>
         </Slide>
