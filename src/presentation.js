@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 import {
   Fit,
@@ -13,44 +13,43 @@ import {
   ListItem,
   List,
   Slide,
-  Text,
-} from 'spectacle';
-import 'prismjs/components/prism-bash';
+  Text
+} from "spectacle";
+import "prismjs/components/prism-bash";
 
-import preloader from 'spectacle/lib/utils/preloader';
+import preloader from "spectacle/lib/utils/preloader";
 
-import createTheme from 'spectacle/lib/themes/default';
-import DemoPluginEditor from './slateWithPlugin';
+import createTheme from "spectacle/lib/themes/default";
+import DemoPluginEditor from "./slateWithPlugin";
 // Require CSS
-require('normalize.css');
-require('./assets/override.css');
-require('./assets/prism-tomorrow.css');
+require("normalize.css");
+require("./assets/override.css");
+require("./assets/prism-tomorrow.css");
 
 const images = {
-  slateSchool: require('./assets/slate-school.jpg'),
-  demoTime: require('./assets/demotime.gif'),
+  slateSchool: require("./assets/slate-school.jpg"),
+  demoTime: require("./assets/demotime.gif")
 };
 
-const video = {
-};
+const video = {};
 
 preloader(images);
 preloader(video);
 
 const theme = createTheme(
   {
-    primary: '#A1D1CA',
-    secondary: '#2D2926',
-    tertiary: '#FDFDFD',
-    quartenary: 'white',
+    primary: "#A1D1CA",
+    secondary: "#2D2926",
+    tertiary: "#FDFDFD",
+    quartenary: "white"
   },
   {
-    primary: '-apple-system, BlinkMacSystemFont, Helvetica',
-    secondary: '-apple-system, BlinkMacSystemFont, Helvetica',
-  },
+    primary: "-apple-system, BlinkMacSystemFont, Helvetica",
+    secondary: "-apple-system, BlinkMacSystemFont, Helvetica"
+  }
 );
 
-theme.screen.components.codePane.fontSize = '1.4rem';
+theme.screen.components.codePane.fontSize = "1.4rem";
 
 const AppearListItem = ({ children }) => (
   <Appear>
@@ -59,14 +58,14 @@ const AppearListItem = ({ children }) => (
 );
 
 AppearListItem.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck
-        transition={['slide']}
+        transition={["slide"]}
         progress="None"
         transitionDuration={500}
         theme={theme}
@@ -77,7 +76,7 @@ export default class Presentation extends React.Component {
               Slate in Action
             </Heading>
           </Fill>
-          <div style={{ position: 'absolute', right: 0 }}>
+          <div style={{ position: "absolute", right: 0 }}>
             <Heading size={3} fit lineHeight={1.5} textColor="tertiary">
               Christian Peter
             </Heading>
@@ -89,7 +88,7 @@ export default class Presentation extends React.Component {
               https://github.com/chrpeter
             </Link>
           </div>
-          <div style={{ position: 'absolute', left: 0 }}>
+          <div style={{ position: "absolute", left: 0 }}>
             <Heading size={3} fit lineHeight={1.5} textColor="tertiary">
               Sebastian Jara
             </Heading>
@@ -114,29 +113,50 @@ export default class Presentation extends React.Component {
           </Heading>
           <List textColor="tertiary">
             <AppearListItem textSize="2.2rem">
+               Slate is a completely customizable framework for building rich
+              text editors.
+            </AppearListItem>
+            <AppearListItem textSize="2.2rem">
               Open source JS Library (~7000stars).
             </AppearListItem>
             <AppearListItem textSize="2.2rem">
               Created by Ian Storm Taylor.
             </AppearListItem>
+          </List>
+        </Slide>
+        <Slide bgColor="secondary" notes="">
+          <Heading size={6} textColor="primary" lineHeight="2">
+            Motivation for creating Slate
+          </Heading>
+          <List textColor="tertiary">
             <AppearListItem textSize="2.2rem">
-               Slate is a completely customizable framework for building rich text editors.
+              Hard-coded schemas, complex change in transformation of document
+            </AppearListItem>
+            <AppearListItem textSize="2.2rem">
+              Serialization/Deserialization an afterthought
+            </AppearListItem>
+            <AppearListItem textSize="2.2rem">
+              Need to learn libraryies own View Layer istead of using existing
+              alternatives (Like React)
+            </AppearListItem>
+            <AppearListItem textSize="2.2rem">
+              Impossible to build nested documents
             </AppearListItem>
           </List>
         </Slide>
         <Slide bgColor="secondary" notes="">
           <Heading size={6} textColor="primary" lineHeight="2">
-            Why Slate?
+            Why did we choose Slate?
           </Heading>
           <List textColor="tertiary">
+            <ListItem textSize="2.2rem">
+              The customer needed a new (CMS?) system
+            </ListItem>
             <ListItem textSize="2.2rem">
               We used Draft.js in the first place, but we need tables...
             </ListItem>
             <ListItem textSize="2.2rem">
               TinyMCE - hard to customize and unfit for our use case.
-            </ListItem>
-            <ListItem textSize="2.2rem">
-              Wait, what, is this a CMS?
             </ListItem>
           </List>
         </Slide>
@@ -155,7 +175,7 @@ export default class Presentation extends React.Component {
                Special use cases for our customer.
             </AppearListItem>
             <AppearListItem textSize="2.2rem">
-                We needed to support tables.
+              We needed to support tables.
             </AppearListItem>
           </List>
         </Slide>
@@ -170,9 +190,7 @@ export default class Presentation extends React.Component {
             <AppearListItem textSize="2.2rem">
               Blocks, inlines and marks (nodes).
             </AppearListItem>
-            <AppearListItem textSize="2.2rem">
-              Immutable
-            </AppearListItem>
+            <AppearListItem textSize="2.2rem">Immutable</AppearListItem>
             <AppearListItem textSize="2.2rem">
               Core library (maybe support for other libraries in the future).
             </AppearListItem>
@@ -187,7 +205,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <CodePane
             lang="js"
-            source={require('./assets/block-tags.example')}
+            source={require("./assets/block-tags.example")}
             margin="-20px auto"
           />
         </Slide>
@@ -197,7 +215,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <CodePane
             lang="js"
-            source={require('./assets/desarlizer_blocks.example')}
+            source={require("./assets/desarlizer_blocks.example")}
             margin="-20px auto"
             textSize="16px"
           />
@@ -210,9 +228,7 @@ export default class Presentation extends React.Component {
             <ListItem textSize="2.2rem">
               Defines how blocks, inlines and marks is rendered.
             </ListItem>
-            <ListItem textSize="2.2rem">
-              Normalization
-            </ListItem>
+            <ListItem textSize="2.2rem">Normalization</ListItem>
           </List>
         </Slide>
         <Slide bgColor="secondary">
@@ -232,21 +248,15 @@ export default class Presentation extends React.Component {
             Why you should use slate 👊
           </Heading>
           <List textColor="tertiary">
-            <ListItem textSize="2.2rem">
-              Fast to start 🚀
-            </ListItem>
+            <ListItem textSize="2.2rem">Fast to start 🚀</ListItem>
             <ListItem textSize="2.2rem">
               Supports complex data models 🌌
             </ListItem>
-            <ListItem textSize="2.2rem">
-              Completely customizable 🔨
-            </ListItem>
+            <ListItem textSize="2.2rem">Completely customizable 🔨</ListItem>
             <ListItem textSize="2.2rem">
               Large community with a lot of active contributors 👥
             </ListItem>
-            <ListItem textSize="2.2rem">
-              But, it is expensive 💰
-            </ListItem>
+            <ListItem textSize="2.2rem">But, it is expensive 💰</ListItem>
           </List>
         </Slide>
         <Slide bgColor="secondary">
