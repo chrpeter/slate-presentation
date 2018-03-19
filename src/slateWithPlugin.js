@@ -26,12 +26,12 @@ class DemoPluginEditor extends React.Component {
   constructor() {
     super();
     this.state = {
-      value: Plain.deserialize('Hei web chapter!!'),
+      value: Plain.deserialize('Hei web chapter!'),
     }
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(change, r){
+  onChange(change){
     this.setState({ value: change.value })
   }
   render() {

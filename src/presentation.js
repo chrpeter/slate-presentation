@@ -248,15 +248,15 @@ export default class Presentation extends React.Component {
             Why you should use slate 👊
           </Heading>
           <List textColor="tertiary">
-            <ListItem textSize="2.2rem">Fast to start 🚀</ListItem>
-            <ListItem textSize="2.2rem">
+            <AppearListItem textSize="2.2rem">Fast to start 🚀</AppearListItem>
+            <AppearListItem textSize="2.2rem">
               Supports complex data models 🌌
-            </ListItem>
-            <ListItem textSize="2.2rem">Completely customizable 🔨</ListItem>
-            <ListItem textSize="2.2rem">
+            </AppearListItem>
+            <AppearListItem textSize="2.2rem">Completely customizable 🔨</AppearListItem>
+            <AppearListItem textSize="2.2rem">
               Large community with a lot of active contributors 👥
-            </ListItem>
-            <ListItem textSize="2.2rem">But, it is expensive 💰</ListItem>
+            </AppearListItem>
+            <AppearListItem textSize="2.2rem">But, it is expensive 💰</AppearListItem>
           </List>
         </Slide>
         <Slide bgColor="secondary">
