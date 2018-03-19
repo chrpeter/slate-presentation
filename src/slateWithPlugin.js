@@ -5,14 +5,14 @@ import React from 'react'
 import CollapseOnEscape from 'slate-collapse-on-escape'
 import SoftBreak from 'slate-soft-break'
 
-const WordCount = () => {
+const LetterCount = () => {
   return {
     renderEditor(props, editor) {
       return (
         <div>
           <div>{props.children}</div>
-          <span className="word-counter">
-            Word Count: {props.value.document.text.length}
+          <span className="letter-counter">
+            Letter Count: {props.value.document.text.length}
           </span>
         </div>
       )
@@ -20,13 +20,13 @@ const WordCount = () => {
   }
 }
 
-const plugins = [CollapseOnEscape(), SoftBreak(), WordCount()]
+const plugins = [CollapseOnEscape(), SoftBreak(), LetterCount()]
 
 class DemoPluginEditor extends React.Component {
   constructor() {
     super();
     this.state = {
-      value: Plain.deserialize(`Hei web chapter!!`),
+      value: Plain.deserialize('Hei web chapter!!'),
     }
     this.onChange = this.onChange.bind(this);
   }
