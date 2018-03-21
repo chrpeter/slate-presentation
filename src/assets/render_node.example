@@ -1,0 +1,13 @@
+const renderNode = props => {
+  const { attributes, children, node } = props;
+  switch (node.type) {
+    case 'section':
+      return <section {...attributes}>{children}</section>;
+    case 'paragraph':
+      return <p {...attributes}>{children}</p>;
+    case 'div':
+      return <div {...attributes}>{children}</div>;
+    default:
+      return null;
+  }
+};

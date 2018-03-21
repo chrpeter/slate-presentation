@@ -222,14 +222,25 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <Heading size={6} textColor="secondary" lineHeight="2">
-            Schema
+            Schema rendering
           </Heading>
-          <List textColor="secondary">
-            <ListItem textSize="2.2rem">
-              Defines how blocks, inlines and marks is rendered.
-            </ListItem>
-            <ListItem textSize="2.2rem">Normalization</ListItem>
-          </List>
+          <CodePane
+            lang="js"
+            source={require("./assets/render_node.example")}
+            margin="-20px auto"
+            textSize="16px"
+          />
+        </Slide>
+        <Slide>
+          <Heading size={6} textColor="secondary" lineHeight="2">
+            Schema normalization
+          </Heading>
+          <CodePane
+            lang="js"
+            source={require("./assets/validate_node.example")}
+            margin="-20px auto"
+            textSize="16px"
+          />
         </Slide>
         <Slide bgColor="secondary">
           <Heading size={6} textColor="tertiary" lineHeight="2">

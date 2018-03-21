@@ -1,0 +1,20 @@
+const validateNode = node => {
+  if (node.kind === 'block') {
+    // Type-specific rules
+    switch (node.type) {
+      // Rule to always add a paragrah node if end of a section
+      case 'section': {
+        const lastNode = node.nodes.last();
+        if (lastNode.type !== 'paragraph') {
+          const block = Block.create(defaultBlock);
+          return change =>
+            change.insertNodeByKey(node.key, node.nodes.size, block);
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  }
+  return null;
+}
