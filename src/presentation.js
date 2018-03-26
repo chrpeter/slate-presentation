@@ -270,6 +270,17 @@ export default class Presentation extends React.Component {
             <AppearListItem textSize="2.2rem">But, it is expensive 💰</AppearListItem>
           </List>
         </Slide>
+        <Slide bgColor="secondary" notes="">
+          <Fill>
+            <Heading size={1} lineHeight={1} textColor="primary">
+              Open source 👊
+            </Heading>
+          </Fill>
+          <br />
+          <Link href="https://github.com/NDLANO" textColor="tertiary">
+            https://github.com/NDLANO
+          </Link>
+        </Slide>
         <Slide bgColor="secondary">
           <Heading size={6} fit lineHeight={1.5} textColor="tertiary">
             Questions?

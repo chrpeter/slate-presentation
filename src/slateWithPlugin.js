@@ -19,8 +19,22 @@ const LetterCount = () => {
     },
   }
 }
+const LetterCount2 = () => {
+  return {
+    renderEditor(props, editor) {
+      return (
+        <div>
+          <div>{props.children}</div>
+          <span className="letter-counter">
+            Hei webchapter
+          </span>
+        </div>
+      )
+    },
+  }
+}
 
-const plugins = [CollapseOnEscape(), SoftBreak(), LetterCount()]
+const plugins = [CollapseOnEscape(), SoftBreak(), LetterCount(), LetterCount2()]
 
 class DemoPluginEditor extends React.Component {
   constructor() {
